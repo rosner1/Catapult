@@ -23,14 +23,13 @@ const Form: React.FC = () => {
         setSubmitted(true);
 
         try {
-            const res = await fetch("http://localhost:5000/submit", {
+            const res = await fetch("https://c0d8-128-210-106-57.ngrok-free.app/submit", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify(formData),
             });
-
             const data = await res.json();
             console.log("Flask Response:", data);
 

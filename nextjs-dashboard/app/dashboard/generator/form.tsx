@@ -12,15 +12,34 @@ const Form: React.FC = () => {
 
     const [submitted, setSubmitted] = useState(false);
 
-    const handleSubmit = () => {
+    const handleSubmit = async() => {
         // Example: send this data to a server or just log it
-        console.log("Experience:", selectedExperience);
-        console.log("Goal:", selectedGoal);
-
-        console.log("Height:", height);
-        console.log("Weight:", weight);
+        const formData = {
+            goal: selectedGoal,
+            experience: selectedExperience,
+            height,
+            weight,
+        };
         setSubmitted(true);
-        router.push("/dashboard/generator/result");
+
+        try {
+            const res = await fetch("http://localhost:5000/submit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
+
+            const data = await res.json();
+            console.log("Flask Response:", data);
+
+            // Optionally navigate or show a success message
+            router.push("/dashboard/generator/result");
+        } catch (error) {
+            console.error("Error submitting to backend:", error);
+        }
+
     };
 
     return (

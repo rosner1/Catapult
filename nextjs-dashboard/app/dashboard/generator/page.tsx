@@ -1,11 +1,11 @@
-import DropdownPage from './DropdownPage';
-import TextBox from "@/app/dashboard/generator/textbox";
+
+import React from "react";
+import Form from "@/app/dashboard/generator/form";
 
 export default function Page() {
     return (
         <div>
-            <DropdownPage />
-            <TextBox />
+            <Form/>
         </div>
     );
 

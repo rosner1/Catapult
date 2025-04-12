@@ -2,6 +2,7 @@
 import {
   HomeIcon,
   DocumentDuplicateIcon,
+  ArrowPathIcon
 } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -10,10 +11,15 @@ import clsx from 'clsx';
 // Map of links to display in the side navigation.
 // Depending on the size of the application, this would be stored in a database.
 const links = [
-  { name: 'Home', href: '/dashboard', icon: HomeIcon },
+  { name: 'Home', href: '/', icon: HomeIcon },
   {
     name: 'Generator',
     href: '/dashboard/generator',
+    icon: ArrowPathIcon,
+  },
+  {
+    name: 'About',
+    href: '/dashboard/about',
     icon: DocumentDuplicateIcon,
   }
 ];

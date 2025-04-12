@@ -26,3 +26,7 @@ def make_dictionary(text):
 
         result[category] = cleaned_items
     return result
+
+
+def format_input(row):
+    return f"Age: {row['Age']}; Sex: {row['Sex']}; Weight: {row['Weight']}; BMI: {row['BMI']}; Fitness Goal: {row['Fitness Goal']}; Fitness Type: {row['Fitness Type']}; Hypertension: {row['Hypertension']}; Diabetes: {row['Diabetes']}; Exercises: {row['Exercises']}"

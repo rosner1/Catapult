@@ -1,3 +1,14 @@
+import DropdownPage from './DropdownPage';
+import TextBox from "@/app/dashboard/generator/textbox";
+
 export default function Page() {
-    return <p>Generator Page</p>;
+    return (
+        <div>
+            <DropdownPage />
+            <TextBox />
+        </div>
+    );
+
 }
+
+

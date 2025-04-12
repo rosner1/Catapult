@@ -23,7 +23,7 @@ const Form: React.FC = () => {
         setSubmitted(true);
 
         try {
-            const res = await fetch("https://c0d8-128-210-106-57.ngrok-free.app/submit", {
+            const res = await fetch("https://catapult-b9bq.onrender.com/submit", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

@@ -4,21 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="41218c71-b190-40c9-98a3-a3825a49dbf3" name="Changes" comment="Got rid of muscle gain">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nextjs-dashboard/app/dashboard/about/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-dashboard/app/dashboard/about/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nextjs-dashboard/app/dashboard/generator/form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-dashboard/app/dashboard/generator/form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nextjs-dashboard/app/dashboard/generator/result/detail/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-dashboard/app/dashboard/generator/result/detail/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nextjs-dashboard/app/dashboard/generator/result/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-dashboard/app/dashboard/generator/result/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nextjs-dashboard/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-dashboard/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nextjs-dashboard/app/ui/button.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nextjs-dashboard/app/ui/dashboard/nav-links.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-dashboard/app/ui/dashboard/nav-links.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nextjs-dashboard/app/ui/dashboard/sidenav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-dashboard/app/ui/dashboard/sidenav.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nextjs-dashboard/app/ui/generator-logo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-dashboard/app/ui/generator-logo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nextjs-dashboard/app/ui/login-form.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nextjs-dashboard/app/ui/search.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nextjs-dashboard/app/ui/skeletons.tsx" beforeDir="false" />
-    </list>
+    <list default="true" id="41218c71-b190-40c9-98a3-a3825a49dbf3" name="Changes" comment="Server" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -136,7 +122,7 @@
       <workItem from="1744471383304" duration="7873000" />
       <workItem from="1744480481651" duration="8441000" />
       <workItem from="1744488941891" duration="8867000" />
-      <workItem from="1744498988976" duration="28208000" />
+      <workItem from="1744498988976" duration="28549000" />
     </task>
     <task id="LOCAL-00001" summary="Added start of UI">
       <option name="closed" value="true" />
@@ -274,7 +260,23 @@
       <option name="project" value="LOCAL" />
       <updated>1744524831178</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Made look good">
+      <option name="closed" value="true" />
+      <created>1744532553103</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1744532553103</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Server">
+      <option name="closed" value="true" />
+      <created>1744532611125</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1744532611125</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -307,6 +309,8 @@
     <MESSAGE value="Fixed BP" />
     <MESSAGE value="Fixed" />
     <MESSAGE value="Got rid of muscle gain" />
-    <option name="LAST_COMMIT_MESSAGE" value="Got rid of muscle gain" />
+    <MESSAGE value="Made look good" />
+    <MESSAGE value="Server" />
+    <option name="LAST_COMMIT_MESSAGE" value="Server" />
   </component>
 </project>

@@ -33,7 +33,7 @@ all_exercises = set(mlb.classes_)
 
 
 
-features = ['Height', 'Weight', 'Fitness Goal', 'Age', 'BMI', 'Sex', 'Target Area', 'Preference', 'Hypertension']
+features = ['Fitness Goal', 'Age', 'Sex', 'Target Area', 'Preference', 'Hypertension']
 target = 'Exercises'
 exerciseModel = RandomForestModel(df, features, target, multi_label=True)
 features_to_encode = ['Fitness Goal', 'Sex', 'Target Area', 'Preference', 'Hypertension']

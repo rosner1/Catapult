@@ -124,7 +124,7 @@ const ResultPage = () => {
                                                 backgroundColor: getGradientColor(Number(value)),
                                                 borderRadius: "8px",
                                                 color: "white",
-                                                width: "150px",
+                                                width: "120px",
                                                 textAlign: "center",
                                                 boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
 

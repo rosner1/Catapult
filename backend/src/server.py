@@ -15,7 +15,7 @@ import random
 import json
 
 #clean df into 
-df = pd.read_csv("exercise_data_updated.csv")
+df = pd.read_csv("../../exercise_data_updated_2.csv")
 
 def convert_to_list(s):
     # strip and lowercase s
@@ -66,7 +66,7 @@ print(exerciseModel.predict_single(person))
 
 # Now, with vegetables:
 
-df = pd.read_csv("exercise_data_adj.csv")
+df = pd.read_csv("../../exercise_data_updated_2.csv")
 df = df.dropna(subset=['Vegetables'])
 df['Vegetables'] = df['Vegetables'].apply(lambda x: eval(x))
 
@@ -92,7 +92,7 @@ print(vegetableModel.predict_single(person))
 
 
 
-df = pd.read_csv("exercise_data_adj.csv")
+df = pd.read_csv("../../exercise_data_updated_2.csv")
 df = df.dropna(subset=['Protein Intake'])
 df['Protein Intake'] = df['Protein Intake'].apply(lambda x: eval(x))
 

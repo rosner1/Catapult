@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="41218c71-b190-40c9-98a3-a3825a49dbf3" name="Changes" comment="Added 5 more variables to use for generating workout" />
+    <list default="true" id="41218c71-b190-40c9-98a3-a3825a49dbf3" name="Changes" comment="Fixed preference options">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-dashboard/app/dashboard/generator/form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-dashboard/app/dashboard/generator/form.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -93,7 +97,7 @@
       <workItem from="1744471383304" duration="7873000" />
       <workItem from="1744480481651" duration="8441000" />
       <workItem from="1744488941891" duration="8867000" />
-      <workItem from="1744498988976" duration="12254000" />
+      <workItem from="1744498988976" duration="18252000" />
     </task>
     <task id="LOCAL-00001" summary="Added start of UI">
       <option name="closed" value="true" />
@@ -191,7 +195,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744513923433</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Fixed preference options">
+      <option name="closed" value="true" />
+      <created>1744514338653</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1744514338653</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,6 +232,7 @@
     <MESSAGE value="?" />
     <MESSAGE value="Made heatmap(?) based on recieved data from server" />
     <MESSAGE value="Added 5 more variables to use for generating workout" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added 5 more variables to use for generating workout" />
+    <MESSAGE value="Fixed preference options" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed preference options" />
   </component>
 </project>

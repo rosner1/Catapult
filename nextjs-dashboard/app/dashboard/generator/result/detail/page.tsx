@@ -68,7 +68,6 @@ const DetailPage = () => {
 
     return (
         <div style={{padding: "2rem"}}>
-            <h2>{name}</h2>
             <img
                 src={imageFileName(formatWords(name))}
                 alt={name}

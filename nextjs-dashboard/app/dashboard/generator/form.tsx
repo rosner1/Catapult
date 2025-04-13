@@ -14,6 +14,7 @@ const Form: React.FC = () => {
     const [Age, setAge] = useState("");
     const [selectedPreference, setSelectedPreference] = useState("Machine");
     const [selectedSex, setSelectedSex] = useState("Other");
+    const [selectedBP, setSelectedBP] = useState("No");
 
     const [submitted, setSubmitted] = useState(false);
 
@@ -28,7 +29,8 @@ const Form: React.FC = () => {
             BMI,
             Age,
             Preference: selectedPreference,
-            Sex: selectedSex
+            Sex: selectedSex,
+            Hypertension: selectedBP
         };
         setSubmitted(true);
 
@@ -77,7 +79,6 @@ const Form: React.FC = () => {
                     <option value="Beginner">Beginner</option>
                     <option value="Intermediate">Intermediate</option>
                     <option value="Advanced">Advanced</option>
-                    <option value="Olympian">Olympian</option>
                 </select>
 
             </div>
@@ -160,6 +161,18 @@ const Form: React.FC = () => {
 
             </div>
 
+            <div style={{marginBottom: "1rem"}}>
+                <label htmlFor="bp-select" style={{marginRight: "1rem"}}>Do you have high blood pressure:</label>
+                <select
+                    value={selectedBP}
+                    onChange={(e) => setSelectedBP(e.target.value)}
+                >
+                    <option value="Weight Loss">No</option>
+                    <option value="Weight Gain">Yes</option>
+                </select>
+
+            </div>
+
             <button
                 onClick={handleSubmit}
                 style={{
@@ -174,19 +187,7 @@ const Form: React.FC = () => {
                 Submit
             </button>
 
-            {submitted && (
-                <div style={{marginTop: "1rem"}}>
-                    <h3>Submitted Info:</h3>
-                    <p>Goal: {selectedGoal}</p>
-                    <p>Experience: {selectedExperience}</p>
-                    <p>Height: {height} cm</p>
-                    <p>Weight: {weight} kg</p>
-                    <p>Focus Area: {selectedFocus}</p>
-                    <p>BMI: {BMI}</p>
-                    <p>Age: {Age}</p>
-                    <p>Preference: {selectedPreference}</p>
-                </div>
-            )}
+            {submitted}
         </div>
     );
 };

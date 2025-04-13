@@ -2,7 +2,7 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 
-from backend.src.RandomForestModel import RandomForestModel
+from RandomForestModel import RandomForestModel
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import LabelEncoder, MultiLabelBinarizer
@@ -112,17 +112,65 @@ print(proteinModel.run_pipeline(features_to_encode))
 
 print(proteinModel.predict_single(person))
 
+
+### MODEL IS FINISHED TRAINING
+
 app = Flask(__name__)
 CORS(app)  # 🛡️ allow cross-origin requests from Next.js
 
 @app.route('/submit', methods=['POST'])
 def submit():
     data = request.json
+    data['Fitness Goal'] = data['goal']
+    data['Height'] = data['height']
+    data['Weight'] = data['weight']
     print("Received data:", data)
+    
+
+    ###  EXERCISE PREDICTIONS
+
+    exercise_predictions = exerciseModel.predict_single(data)['scores']
+    top_exercise_predictions = sorted(exercise_predictions.items(), key=lambda x: x[1], reverse=True)[:5]
+
+    top_exercise_predictions_dict = {}
+
+    for item in top_exercise_predictions:
+        top_exercise_predictions_dict[item[0]] = item[1]
+
+
+    ###  VEGETABLE PREDICTIONS
+
+    vegetable_predictions = vegetableModel.predict_single(data)['scores']
+    top_vegetable_predictions = sorted(vegetable_predictions.items(), key=lambda x: x[1], reverse=True)[:5]
+
+    top_vegetable_predictions_dict = {}
+
+    for item in top_vegetable_predictions:
+        top_vegetable_predictions_dict[item[0]] = item[1]
+
+
+    ###  PROTEIN PREDICTIONS
+
+    protein_predictions = proteinModel.predict_single(data)['scores']
+    top_protein_predictions = sorted(protein_predictions.items(), key=lambda x: x[1], reverse=True)[:5]
+
+    top_protein_predictions_dict = {}
+
+    for item in top_protein_predictions:
+        top_protein_predictions_dict[item[0]] = item[1]
 
     
-    
-    return jsonify(exerciseModel.predict_single(data)), 200
+    ###  COMBINATION TO SEND
+
+    ultra_dict = {
+        'Exercises' : top_exercise_predictions_dict,
+        'Vegetables' : top_vegetable_predictions_dict,
+        'Proteins' : top_protein_predictions_dict
+    }
+
+    print("Sending:", ultra_dict)
+
+    return jsonify(ultra_dict), 200
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)

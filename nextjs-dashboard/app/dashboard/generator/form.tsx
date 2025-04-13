@@ -23,8 +23,7 @@ const Form: React.FC = () => {
         setSubmitted(true);
 
         try {
-            //This is the render server being hosted from flask
-            const res = await fetch("https://catapult-b9bq.onrender.com/submit", {
+            const res = await fetch("http://localhost:5000/submit", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -52,9 +51,9 @@ const Form: React.FC = () => {
                     value={selectedGoal}
                     onChange={(e) => setSelectedGoal(e.target.value)}
                 >
-                    <option value="Gain muscle">Gain muscle</option>
-                    <option value="Gain weight">Gain weight</option>
-                    <option value="Lose weight">Lose weight</option>
+                    <option value="Muscle Gain">Muscle Gain</option>
+                    <option value="Weight Gain">Weight Gain</option>
+                    <option value="Weight Gain">Weight Gain</option>
                 </select>
 
             </div>

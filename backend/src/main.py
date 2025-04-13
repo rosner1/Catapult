@@ -9,7 +9,7 @@ from sklearn.metrics import classification_report, accuracy_score
 import random
 
 #clean df into 
-df = pd.read_csv("exercise data.csv")
+df = pd.read_csv("exercise_data_updated.csv")
 
 def convert_to_list(s):
     # strip and lowercase s

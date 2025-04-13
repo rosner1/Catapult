@@ -36,7 +36,7 @@ const Form: React.FC = () => {
 
         try {
             //This is the render server being hosted from flask
-            const res = await fetch("https://catapult-b9bq.onrender.com/submit", {
+            const res = await fetch("http://localhost:5000/submit", {
                 //https://catapult-b9bq.onrender.com/submit
                 //http://localhost:5000/submit
                 method: "POST",

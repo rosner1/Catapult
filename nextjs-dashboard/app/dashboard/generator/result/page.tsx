@@ -21,6 +21,53 @@ const getGradientColor = (score: number): string => {
 const capitalizeWords = (str: string) =>
     str.replace(/\b\w/g, (char) => char.toUpperCase());
 
+const linksDictionary: { [key: string]: string } = {
+    "bell peppers": "https://en.wikipedia.org/wiki/Bell_pepper",
+    "broccoli": "https://en.wikipedia.org/wiki/Broccoli",
+    "capers": "https://en.wikipedia.org/wiki/Caper",
+    "carrots": "https://en.wikipedia.org/wiki/Carrot",
+    "celery": "https://en.wikipedia.org/wiki/Celery",
+    "cherry tomatoes": "https://en.wikipedia.org/wiki/Tomato",
+    "cucumbers": "https://en.wikipedia.org/wiki/Cucumber",
+    "garlic": "https://en.wikipedia.org/wiki/Garlic",
+    "green papper": "https://en.wikipedia.org/wiki/Bell_pepper",
+    "iceberg lettuce": "https://en.wikipedia.org/wiki/Iceberg_lettuce",
+    "leafy greens": "https://en.wikipedia.org/wiki/Leaf_vegetable",
+    "lettuce": "https://en.wikipedia.org/wiki/Lettuce",
+    "mixed greens": "https://en.wikipedia.org/wiki/Mesclun",
+    "mushroom": "https://en.wikipedia.org/wiki/Mushroom",
+    "onion": "https://en.wikipedia.org/wiki/Onion",
+    "roma tomatoes": "https://en.wikipedia.org/wiki/Tomato",
+    "spinach": "https://en.wikipedia.org/wiki/Spinach",
+    "sweet potato": "https://en.wikipedia.org/wiki/Sweet_potato",
+    "tomatoes": "https://en.wikipedia.org/wiki/Tomato",
+    "water chestnut": "https://en.wikipedia.org/wiki/Water_chestnut",
+    "baru nuts": "https://en.wikipedia.org/wiki/Baru_nut",
+    "beech nuts": "https://en.wikipedia.org/wiki/Beech",
+    "black walnut": "https://en.wikipedia.org/wiki/Black_walnut",
+    "cottage cheese": "https://en.wikipedia.org/wiki/Cottage_cheese",
+    "cheese": "https://en.wikipedia.org/wiki/Cheese",
+    "cheese sandwich": "https://en.wikipedia.org/wiki/Cheese_sandwich",
+    "chicken": "https://en.wikipedia.org/wiki/Chicken_as_food",
+    "dairy products": "https://en.wikipedia.org/wiki/Dairy_product",
+    "eggs": "https://en.wikipedia.org/wiki/Egg_as_food",
+    "fish": "https://en.wikipedia.org/wiki/Fish_as_food",
+    "hemp seeds": "https://en.wikipedia.org/wiki/Hemp",
+    "jelly sandwich": "https://en.wikipedia.org/wiki/Peanut_butter_and_jelly_sandwich",
+    "low fat milk": "https://en.wikipedia.org/wiki/Milk",
+    "legumes": "https://en.wikipedia.org/wiki/Legume",
+    "low-fat dairy products": "https://en.wikipedia.org/wiki/Milk",
+    "mixed teff": "https://en.wikipedia.org/wiki/Eragrostis_tef",
+    "nuts": "https://en.wikipedia.org/wiki/Nut_(fruit)",
+    "peanut butter": "https://en.wikipedia.org/wiki/Peanut_butter",
+    "poultry": "https://en.wikipedia.org/wiki/Poultry",
+    "red meats": "https://en.wikipedia.org/wiki/Red_meat",
+    "skim milk": "https://en.wikipedia.org/wiki/Skimmed_milk",
+    "squash seeds": "https://en.wikipedia.org/wiki/Pumpkin_seed",
+    "tofu": "https://en.wikipedia.org/wiki/Tofu"
+};
+
+
 
 const ResultPage = () => {
     const router = useRouter();
@@ -117,6 +164,8 @@ const ResultPage = () => {
                                                 if (!isLinkDisabled) {  // Only navigate if the link is not disabled
                                                     const encoded = encodeURIComponent(JSON.stringify(capitalizeWords(key)));
                                                     router.push(`/dashboard/generator/result/detail?name=${encoded}`);
+                                                } else {
+                                                    window.open(linksDictionary[key], "_blank");
                                                 }
                                             }}
                                             style={{

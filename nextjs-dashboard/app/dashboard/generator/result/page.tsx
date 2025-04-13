@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 
-
+// Function to calculate gradient color based on score
 const getGradientColor = (score: number): string => {
     const clamp = (num: number) => Math.max(0, Math.min(1, num));
     const red = [248, 113, 113];
@@ -18,9 +18,11 @@ const getGradientColor = (score: number): string => {
     return `rgb(${r}, ${g}, ${b})`;
 };
 
+// Function to capitalize words
 const capitalizeWords = (str: string) =>
     str.replace(/\b\w/g, (char) => char.toUpperCase());
 
+// Links dictionary
 const linksDictionary: { [key: string]: string } = {
     "bell peppers": "https://en.wikipedia.org/wiki/Bell_pepper",
     "broccoli": "https://en.wikipedia.org/wiki/Broccoli",
@@ -67,36 +69,41 @@ const linksDictionary: { [key: string]: string } = {
     "tofu": "https://en.wikipedia.org/wiki/Tofu"
 };
 
-
-
 const ResultPage = () => {
     const router = useRouter();
     const searchParams = useSearchParams(); // Retrieve search params using the useSearchParams hook
     const [result, setResult] = useState<any>(null);
+    const [loading, setLoading] = useState<boolean>(true);
 
     useEffect(() => {
         const resultData = searchParams.get("resultData");
 
         if (!resultData) {
-            notFound();
+            notFound();  // Handle case if resultData is missing
             return;
         }
 
         try {
             const parsedResult = JSON.parse(decodeURIComponent(resultData));
             if (typeof parsedResult !== 'object' || parsedResult === null) {
-                notFound();
+                notFound(); // Handle case if resultData is not a valid object
                 return;
             }
             setResult(parsedResult);
         } catch (err) {
             console.error("Error parsing result data:", err);
-            setResult(null);
+            setResult(null);  // Handle invalid JSON or parsing errors
+        } finally {
+            setLoading(false);  // Stop loading once the data is processed
         }
     }, [searchParams]);
 
+    if (loading) {
+        return <p>Loading...</p>;
+    }
+
     if (result === null) {
-        return <p>Loading or Invalid result data...</p>;
+        return <p>Invalid result data...</p>;  // Handle invalid or missing result data
     }
 
     return (
@@ -114,7 +121,6 @@ const ResultPage = () => {
                     color: "black",
                     background: "#f5d790",
                     fontWeight: "bold",
-
                 }}
             >
                 <h1 style={{ margin: 0 }}>Recommendations</h1>
@@ -176,9 +182,7 @@ const ResultPage = () => {
                                                 width: "120px",
                                                 textAlign: "center",
                                                 boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-
                                             }}
-                                            //disabled={isLinkDisabled}  // Optional: disable the button
                                         >
                                             <strong>{capitalizeWords(key)}</strong>
                                         </button>
@@ -193,3 +197,9 @@ const ResultPage = () => {
 };
 
 export default ResultPage;
+
+
+
+
+
+

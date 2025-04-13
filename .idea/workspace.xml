@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="41218c71-b190-40c9-98a3-a3825a49dbf3" name="Changes" comment="Update README and wikipedia links">
+    <list default="true" id="41218c71-b190-40c9-98a3-a3825a49dbf3" name="Changes" comment="lockfile?">
       <change afterPath="$PROJECT_DIR$/backend/src/get-pip.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-dashboard/app/dashboard/generator/result/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-dashboard/app/dashboard/generator/result/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +126,7 @@
       <workItem from="1744471383304" duration="7873000" />
       <workItem from="1744480481651" duration="8441000" />
       <workItem from="1744488941891" duration="8867000" />
-      <workItem from="1744498988976" duration="31857000" />
+      <workItem from="1744498988976" duration="32835000" />
     </task>
     <task id="LOCAL-00001" summary="Added start of UI">
       <option name="closed" value="true" />
@@ -311,7 +312,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744534940378</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="lockfile?">
+      <option name="closed" value="true" />
+      <created>1744536288139</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1744536288139</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -349,6 +358,7 @@
     <MESSAGE value="requirements" />
     <MESSAGE value="made text black and added pictures" />
     <MESSAGE value="Update README and wikipedia links" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update README and wikipedia links" />
+    <MESSAGE value="lockfile?" />
+    <option name="LAST_COMMIT_MESSAGE" value="lockfile?" />
   </component>
 </project>

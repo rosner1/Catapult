@@ -141,8 +141,8 @@ const Form: React.FC = () => {
                     value={selectedPreference}
                     onChange={(e) => setSelectedPreference(e.target.value)}
                 >
-                    <option value="Machine">Full Body</option>
-                    <option value="Freeweight">Upper Body</option>
+                    <option value="Machine">Machine</option>
+                    <option value="Freeweight">Free Weights</option>
                 </select>
 
             </div>

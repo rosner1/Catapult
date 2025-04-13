@@ -167,8 +167,8 @@ const Form: React.FC = () => {
                     value={selectedBP}
                     onChange={(e) => setSelectedBP(e.target.value)}
                 >
-                    <option value="Weight Loss">No</option>
-                    <option value="Weight Gain">Yes</option>
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
                 </select>
 
             </div>

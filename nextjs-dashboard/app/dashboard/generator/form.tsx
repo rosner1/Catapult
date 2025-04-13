@@ -66,7 +66,6 @@ const Form: React.FC = () => {
                 >
                     <option value="Weight Loss">Weight Loss</option>
                     <option value="Weight Gain">Weight Gain</option>
-                    <option value="Muscle Gain">Muscle Gain</option>
                 </select>
 
             </div>

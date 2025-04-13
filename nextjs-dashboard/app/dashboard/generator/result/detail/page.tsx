@@ -72,8 +72,9 @@ const DetailPage = () => {
                 src={imageFileName(formatWords(name))}
                 alt={name}
                 style={{
-                    maxWidth: "100%",
-                    height: "auto",
+                    width: "800px",   // Set a fixed width
+                    height: "500px",  // Set a fixed height
+                    objectFit: "cover", // Ensures the image covers the area without distorting aspect ratio
                     borderRadius: "12px",
                     marginBottom: "1rem"
                 }}
@@ -87,7 +88,7 @@ const DetailPage = () => {
                 }}
                 style={{
                     padding: "1rem",
-                    backgroundColor: "#FFD700",
+                    backgroundColor: "#f5d790",
                     borderRadius: "8px",
                     color: "white",
                     width: "150px",

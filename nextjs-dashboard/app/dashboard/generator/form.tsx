@@ -57,6 +57,7 @@ const Form: React.FC = () => {
     };
 
     return (
+        <div style={{ display: "flex", height: "100vh" }}>
         <div style={{padding: "2rem", fontFamily: "Arial, sans-serif"}}>
             <div style={{marginBottom: "1rem"}}>
                 <label htmlFor="goal-select" style={{marginRight: "1rem"}}>Choose a goal:</label>
@@ -176,8 +177,8 @@ const Form: React.FC = () => {
                 onClick={handleSubmit}
                 style={{
                     padding: "0.5rem 1rem",
-                    backgroundColor: "#0070f3",
-                    color: "white",
+                    backgroundColor: "#f5d790",
+                    color: "black",
                     border: "none",
                     borderRadius: "5px",
                     cursor: "pointer",
@@ -187,6 +188,20 @@ const Form: React.FC = () => {
             </button>
 
             {submitted}
+        </div>
+
+        {/* Right side: Image */}
+       <div style={{ flex: 1 }}>
+            <img
+                src="/Pete.gif"  // Replace with your image path
+                alt="Right Half Image"
+                style={{
+                    width: "90%",
+                    height: "90%",
+                    objectFit: "cover",  // Ensure the image covers the container
+                }}
+            />
+        </div>
         </div>
     );
 };

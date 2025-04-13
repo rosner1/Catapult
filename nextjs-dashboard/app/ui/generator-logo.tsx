@@ -1,4 +1,3 @@
-import { GlobeAltIcon } from '@heroicons/react/24/outline';
 import { lusitana } from '@/app/ui/fonts';
 
 export default function GeneratorLogo() {
@@ -6,8 +5,7 @@ export default function GeneratorLogo() {
     <div
       className={`${lusitana.className} flex flex-row items-center leading-none text-white`}
     >
-      <GlobeAltIcon className="h-12 w-12 rotate-[15deg]" />
-      <p className="text-[44px]">Exercise Generator</p>
+      <p className="text-[60px]">Train Station</p>
     </div>
   );
 }

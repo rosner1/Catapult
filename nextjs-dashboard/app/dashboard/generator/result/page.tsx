@@ -54,36 +54,87 @@ const ResultPage = () => {
 
     return (
         <div style={{ padding: "2rem", fontFamily: "Arial, sans-serif" }}>
-            <h1 style={{ marginBottom: "1rem" }}>Results</h1>
+            {/* Add border and center the heading */}
+            <div
+                style={{
+                    padding: "1rem",
+                    marginBottom: "2rem", // Space between heading and recommendations
+                    textAlign: "center", // Center the text horizontally
+                    maxWidth: "330px", // Optional, to limit the width
+                    marginLeft: "auto", // Center the element horizontally
+                    marginRight: "auto", // Center the element horizontally
+                    borderRadius: "8px", // Optional, for rounded corners
+                    color: "black",
+                    background: "#f5d790",
+                    fontWeight: "bold",
+
+                }}
+            >
+                <h1 style={{ margin: 0 }}>Recommendations</h1>
+            </div>
 
             {Object.entries(result).map(([category, items]) => {
                 if (typeof items !== 'object' || items === null) return null;
 
                 return (
-                    <div key={category} style={{ marginBottom: "2rem" }}>
-                        <h2>{category}</h2>
-                        <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
+                    <div key={category} style={{ marginBottom: "2rem", display: "flex", alignItems: "center", justifyContent: "center", gap: "1rem" }}>
+                        {/* Category box */}
+                        <div
+                            style={{
+                                display: "inline-block",
+                                padding: "0.5rem 1rem",
+                                backgroundColor: "#f5d790",
+                                borderRadius: "8px",
+                                marginBottom: "0",  // Remove margin at the bottom so it aligns vertically
+                                fontWeight: "bold",
+                                textAlign: "center",
+                                width: "150px",   // Fixed width for the category box
+                                boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+                                height: "auto", // Ensure it adjusts to content height
+                                lineHeight: "1.5", // Adjust line-height to prevent any text overflow
+                            }}
+                        >
+                            {capitalizeWords(category)}
+                        </div>
+                        {/* Button grid */}
+                        <div
+                            style={{
+                                display: "flex",
+                                flexWrap: "wrap",
+                                justifyContent: "center", // Center the items horizontally
+                                gap: "1rem", // Space between buttons
+                            }}
+                        >
                             {Object.entries(items).sort((a, b) => Number(b[1]) - Number(a[1])) // descending by value
-                                .map(([key, value]) => (
-                                <button
-                                    key={key}
-                                    onClick={() => {
-                                        const encoded = encodeURIComponent(JSON.stringify(capitalizeWords(key)));
-                                        router.push(`/dashboard/generator/result/detail?name=${encoded}`);
-                                }}
-                                    style={{
-                                        padding: "1rem",
-                                        backgroundColor: getGradientColor(Number(value)),
-                                        borderRadius: "8px",
-                                        color: "white",
-                                        width: "150px",
-                                        textAlign: "center",
-                                        boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-                                    }}
-                                >
-                                    <strong>{capitalizeWords(key)}</strong>
-                                </button>
-                            ))}
+                                .map(([key, value]) => {
+                                    // Conditional logic to determine if a link is needed
+                                    const isLinkDisabled = category !== "Exercises"; // Replace this with your condition
+
+                                    return (
+                                        <button
+                                            key={key}
+                                            onClick={() => {
+                                                if (!isLinkDisabled) {  // Only navigate if the link is not disabled
+                                                    const encoded = encodeURIComponent(JSON.stringify(capitalizeWords(key)));
+                                                    router.push(`/dashboard/generator/result/detail?name=${encoded}`);
+                                                }
+                                            }}
+                                            style={{
+                                                padding: "1rem",
+                                                backgroundColor: getGradientColor(Number(value)),
+                                                borderRadius: "8px",
+                                                color: "white",
+                                                width: "150px",
+                                                textAlign: "center",
+                                                boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+
+                                            }}
+                                            //disabled={isLinkDisabled}  // Optional: disable the button
+                                        >
+                                            <strong>{capitalizeWords(key)}</strong>
+                                        </button>
+                                    );
+                                })}
                         </div>
                     </div>
                 );

@@ -48,7 +48,7 @@ class RandomForestModel:
         self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(
             X, y, test_size=test_size, random_state=random_state)
 
-    def train(self, n_estimators=50, max_depth=None, random_state=42):
+    def train(self, n_estimators=5, max_depth=None, random_state=42):
         """
         Train a RandomForest classifier
         If it is multi-label, uses a multi output classifier around the base random forest one with the parameters

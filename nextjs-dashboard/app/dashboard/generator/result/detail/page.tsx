@@ -90,7 +90,7 @@ const DetailPage = () => {
                     padding: "1rem",
                     backgroundColor: "#f5d790",
                     borderRadius: "8px",
-                    color: "white",
+                    color: "black",
                     width: "150px",
                     textAlign: "center",
                     boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",

@@ -7,18 +7,18 @@ const Form: React.FC = () => {
     const router = useRouter();
     const [selectedExperience, setSelectedExperience] = useState("Beginner");
     const [selectedGoal, setSelectedGoal] = useState("Gain muscle");
-    const [height, setHeight] = useState("");
-    const [weight, setWeight] = useState("");
+    const [Height, setHeight] = useState("");
+    const [Weight, setWeight] = useState("");
 
     const [submitted, setSubmitted] = useState(false);
 
     const handleSubmit = async() => {
         // Example: send this data to a server or just log it
         const formData = {
-            goal: selectedGoal,
+            Goal: selectedGoal,
             experience: selectedExperience,
-            height,
-            weight,
+            Height,
+            Weight,
         };
         setSubmitted(true);
 
@@ -33,8 +33,10 @@ const Form: React.FC = () => {
             const data = await res.json();
             console.log("Flask Response:", data);
 
+
             // Optionally navigate or show a success message
-            router.push("/dashboard/generator/result");
+            const encoded = encodeURIComponent(JSON.stringify(data));
+            router.push(`/dashboard/generator/result?resultData=${encoded}`);
         } catch (error) {
             console.error("Error submitting to backend:", error);
         }
@@ -73,7 +75,7 @@ const Form: React.FC = () => {
                 <label style={{marginRight: "1rem"}}>Height (cm):</label>
                 <input
                     type="text"
-                    value={height}
+                    value={Height}
                     onChange={(e) => setHeight(e.target.value)}
                     placeholder="Enter height"
                 />
@@ -83,7 +85,7 @@ const Form: React.FC = () => {
                 <label style={{marginRight: "1rem"}}>Weight (kg):</label>
                 <input
                     type="text"
-                    value={weight}
+                    value={Weight}
                     onChange={(e) => setWeight(e.target.value)}
                     placeholder="Enter weight"
                 />
@@ -108,8 +110,8 @@ const Form: React.FC = () => {
                     <h3>Submitted Info:</h3>
                     <p>Goal: {selectedGoal}</p>
                     <p>Experience: {selectedExperience}</p>
-                    <p>Height: {height} cm</p>
-                    <p>Weight: {weight} kg</p>
+                    <p>Height: {Height} cm</p>
+                    <p>Weight: {Weight} kg</p>
                 </div>
             )}
         </div>

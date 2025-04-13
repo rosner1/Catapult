@@ -1,0 +1,17 @@
+Index: backend/src/server.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># app.py (Flask backend)\nfrom flask import Flask, request, jsonify\nfrom flask_cors import CORS\n\napp = Flask(__name__)\nCORS(app)  # \uD83D\uDEE1\uFE0F allow cross-origin requests from Next.js\n\n@app.route('/submit', methods=['POST'])\ndef submit():\n    data = request.json\n    print(\"Received data:\", data)\n\n    # Do something with the data...\n    return jsonify({\"status\": \"success\", \"message\": \"Data received\"}), 200\n\nif __name__ == '__main__':\n    app.run(debug=True, port=5000)\n
+===================================================================
+diff --git a/backend/src/server.py b/backend/src/server.py
+--- a/backend/src/server.py	(revision 89262b6b2b3afcb8836a4396a563f2ccbbd434e7)
++++ b/backend/src/server.py	(date 1744497561154)
+@@ -3,7 +3,7 @@
+ from flask_cors import CORS
+ 
+ app = Flask(__name__)
+-CORS(app)  # 🛡️ allow cross-origin requests from Next.js
++CORS(app)
+ 
+ @app.route('/submit', methods=['POST'])
+ def submit():

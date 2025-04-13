@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="41218c71-b190-40c9-98a3-a3825a49dbf3" name="Changes" comment="Fixed preference options">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nextjs-dashboard/app/dashboard/generator/form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-dashboard/app/dashboard/generator/form.tsx" afterDir="false" />
+    <list default="true" id="41218c71-b190-40c9-98a3-a3825a49dbf3" name="Changes" comment="Fixed BP">
+      <change beforePath="$PROJECT_DIR$/nextjs-dashboard/Node.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +95,7 @@
       <workItem from="1744471383304" duration="7873000" />
       <workItem from="1744480481651" duration="8441000" />
       <workItem from="1744488941891" duration="8867000" />
-      <workItem from="1744498988976" duration="18913000" />
+      <workItem from="1744498988976" duration="19591000" />
     </task>
     <task id="LOCAL-00001" summary="Added start of UI">
       <option name="closed" value="true" />
@@ -210,7 +209,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744520625279</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Fixed BP">
+      <option name="closed" value="true" />
+      <created>1744520997901</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1744520997901</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,6 +247,7 @@
     <MESSAGE value="Made heatmap(?) based on recieved data from server" />
     <MESSAGE value="Added 5 more variables to use for generating workout" />
     <MESSAGE value="Fixed preference options" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed preference options" />
+    <MESSAGE value="Fixed BP" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed BP" />
   </component>
 </project>

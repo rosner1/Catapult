@@ -18,6 +18,10 @@ const getGradientColor = (score: number): string => {
     return `rgb(${r}, ${g}, ${b})`;
 };
 
+const capitalizeWords = (str: string) =>
+    str.replace(/\b\w/g, (char) => char.toUpperCase());
+
+
 const ResultPage = () => {
     const router = useRouter();
     const searchParams = useSearchParams(); // Retrieve search params using the useSearchParams hook
@@ -64,7 +68,7 @@ const ResultPage = () => {
                                 <button
                                     key={key}
                                     onClick={() => {
-                                        const encoded = encodeURIComponent(JSON.stringify(key));
+                                        const encoded = encodeURIComponent(JSON.stringify(capitalizeWords(key)));
                                         router.push(`/dashboard/generator/result/detail?name=${encoded}`);
                                 }}
                                     style={{
@@ -77,7 +81,7 @@ const ResultPage = () => {
                                         boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
                                     }}
                                 >
-                                    <strong>{key}</strong>
+                                    <strong>{capitalizeWords(key)}</strong>
                                 </button>
                             ))}
                         </div>

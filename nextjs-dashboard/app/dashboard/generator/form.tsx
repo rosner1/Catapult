@@ -9,6 +9,11 @@ const Form: React.FC = () => {
     const [selectedGoal, setSelectedGoal] = useState("Weight Loss");
     const [height, setHeight] = useState("");
     const [weight, setWeight] = useState("");
+    const [selectedFocus, setSelectedFocus] = useState("Full Body");
+    const [BMI, setBMI] = useState("");
+    const [Age, setAge] = useState("");
+    const [selectedPreference, setSelectedPreference] = useState("Machine");
+    const [selectedSex, setSelectedSex] = useState("Other");
 
     const [submitted, setSubmitted] = useState(false);
 
@@ -19,6 +24,11 @@ const Form: React.FC = () => {
             experience: selectedExperience,
             height,
             weight,
+            Focus_Area: selectedFocus,
+            BMI,
+            Age,
+            Preference: selectedPreference,
+            Sex: selectedSex
         };
         setSubmitted(true);
 
@@ -61,7 +71,7 @@ const Form: React.FC = () => {
             <div style={{marginBottom: "1rem"}}>
                 <label htmlFor="experience-select" style={{marginRight: "1rem"}}>Choose an experience level:</label>
                 <select
-                    value={selectedGoal}
+                    value={selectedExperience}
                     onChange={(e) => setSelectedExperience(e.target.value)}
                 >
                     <option value="Beginner">Beginner</option>
@@ -92,6 +102,64 @@ const Form: React.FC = () => {
                 />
             </div>
 
+            <div style={{marginBottom: "1rem"}}>
+                <label htmlFor="focus-select" style={{marginRight: "1rem"}}>Choose a focus:</label>
+                <select
+                    value={selectedFocus}
+                    onChange={(e) => setSelectedFocus(e.target.value)}
+                >
+                    <option value="Full Body">Full Body</option>
+                    <option value="Upper Body">Upper Body</option>
+                    <option value="Lower Body">Lower Body</option>
+                </select>
+
+            </div>
+
+            <div style={{marginBottom: "1rem"}}>
+                <label style={{marginRight: "1rem"}}>BMI:</label>
+                <input
+                    type="text"
+                    value={BMI}
+                    onChange={(e) => setBMI(e.target.value)}
+                    placeholder="Enter BMI"
+                />
+            </div>
+
+            <div style={{marginBottom: "1rem"}}>
+                <label style={{marginRight: "1rem"}}>Age:</label>
+                <input
+                    type="text"
+                    value={Age}
+                    onChange={(e) => setAge(e.target.value)}
+                    placeholder="Enter age"
+                />
+            </div>
+
+            <div style={{marginBottom: "1rem"}}>
+                <label htmlFor="preference-select" style={{marginRight: "1rem"}}>Choose a preference:</label>
+                <select
+                    value={selectedPreference}
+                    onChange={(e) => setSelectedPreference(e.target.value)}
+                >
+                    <option value="Machine">Full Body</option>
+                    <option value="Freeweight">Upper Body</option>
+                </select>
+
+            </div>
+
+            <div style={{marginBottom: "1rem"}}>
+                <label htmlFor="sex-select" style={{marginRight: "1rem"}}>Choose a sex:</label>
+                <select
+                    value={selectedSex}
+                    onChange={(e) => setSelectedSex(e.target.value)}
+                >
+                    <option value="Other">Other</option>
+                    <option value="Female">Female</option>
+                    <option value="Male">Male</option>
+                </select>
+
+            </div>
+
             <button
                 onClick={handleSubmit}
                 style={{
@@ -113,6 +181,10 @@ const Form: React.FC = () => {
                     <p>Experience: {selectedExperience}</p>
                     <p>Height: {height} cm</p>
                     <p>Weight: {weight} kg</p>
+                    <p>Focus Area: {selectedFocus}</p>
+                    <p>BMI: {BMI}</p>
+                    <p>Age: {Age}</p>
+                    <p>Preference: {selectedPreference}</p>
                 </div>
             )}
         </div>

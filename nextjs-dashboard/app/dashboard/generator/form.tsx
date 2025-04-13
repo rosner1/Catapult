@@ -6,23 +6,24 @@ import { useRouter } from "next/navigation";
 const Form: React.FC = () => {
     const router = useRouter();
     const [selectedExperience, setSelectedExperience] = useState("Beginner");
-    const [selectedGoal, setSelectedGoal] = useState("Gain muscle");
-    const [Height, setHeight] = useState("");
-    const [Weight, setWeight] = useState("");
+    const [selectedGoal, setSelectedGoal] = useState("Weight Loss");
+    const [height, setHeight] = useState("");
+    const [weight, setWeight] = useState("");
 
     const [submitted, setSubmitted] = useState(false);
 
     const handleSubmit = async() => {
         // Example: send this data to a server or just log it
         const formData = {
-            Goal: selectedGoal,
+            goal: selectedGoal,
             experience: selectedExperience,
-            Height,
-            Weight,
+            height,
+            weight,
         };
         setSubmitted(true);
 
         try {
+            //This is the render server being hosted from flask
             const res = await fetch("http://localhost:5000/submit", {
                 method: "POST",
                 headers: {
@@ -51,14 +52,14 @@ const Form: React.FC = () => {
                     value={selectedGoal}
                     onChange={(e) => setSelectedGoal(e.target.value)}
                 >
+                    <option value="Weight Loss">Weight Loss</option>
+                    <option value="Weight Gain">Weight Gain</option>
                     <option value="Muscle Gain">Muscle Gain</option>
-                    <option value="Weight Gain">Weight Gain</option>
-                    <option value="Weight Gain">Weight Gain</option>
                 </select>
 
             </div>
             <div style={{marginBottom: "1rem"}}>
-                <label htmlFor="experience-select" style={{marginRight: "1rem"}}>Choose a color:</label>
+                <label htmlFor="experience-select" style={{marginRight: "1rem"}}>Choose an experience level:</label>
                 <select
                     value={selectedGoal}
                     onChange={(e) => setSelectedExperience(e.target.value)}
@@ -75,7 +76,7 @@ const Form: React.FC = () => {
                 <label style={{marginRight: "1rem"}}>Height (cm):</label>
                 <input
                     type="text"
-                    value={Height}
+                    value={height}
                     onChange={(e) => setHeight(e.target.value)}
                     placeholder="Enter height"
                 />
@@ -85,7 +86,7 @@ const Form: React.FC = () => {
                 <label style={{marginRight: "1rem"}}>Weight (kg):</label>
                 <input
                     type="text"
-                    value={Weight}
+                    value={weight}
                     onChange={(e) => setWeight(e.target.value)}
                     placeholder="Enter weight"
                 />
@@ -110,8 +111,8 @@ const Form: React.FC = () => {
                     <h3>Submitted Info:</h3>
                     <p>Goal: {selectedGoal}</p>
                     <p>Experience: {selectedExperience}</p>
-                    <p>Height: {Height} cm</p>
-                    <p>Weight: {Weight} kg</p>
+                    <p>Height: {height} cm</p>
+                    <p>Weight: {weight} kg</p>
                 </div>
             )}
         </div>

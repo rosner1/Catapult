@@ -15,7 +15,7 @@ import random
 import json
 
 #clean df into 
-df = pd.read_csv("../../exercise_data_updated_2.csv")
+df = pd.read_csv("exercise_data_updated_2.csv")
 
 def convert_to_list(s):
     # strip and lowercase s
@@ -51,10 +51,10 @@ def add_randomness(ex_list, removal_prob=0.1, addition_prob=0.1):
 
 df['Exercises'] = df['Exercises'].apply(add_randomness)
 
-features = ['Height', 'Weight', 'Fitness Goal']
+features = ['Height', 'Weight', 'Fitness Goal', 'Age', 'BMI', 'Sex', 'Target Area', 'Preference', 'Hypertension']
 target = 'Exercises'
 exerciseModel = RandomForestModel(df, features, target, multi_label=True)
-features_to_encode = ['Fitness Goal']
+features_to_encode = ['Fitness Goal', 'Sex', 'Target Area', 'Preference', 'Hypertension']
 print(exerciseModel.run_pipeline(features_to_encode))
 
 person = {
@@ -66,7 +66,7 @@ print(exerciseModel.predict_single(person))
 
 # Now, with vegetables:
 
-df = pd.read_csv("../../exercise_data_updated_2.csv")
+df = pd.read_csv("exercise_data_adj.csv")
 df = df.dropna(subset=['Vegetables'])
 df['Vegetables'] = df['Vegetables'].apply(lambda x: eval(x))
 
@@ -80,10 +80,10 @@ Y = mlb.fit_transform(df['Vegetables'])
 print("Vegetable classes:", mlb.classes_)
 all_vegetables = set(mlb.classes_)
 
-features = ['Height', 'Weight', 'Fitness Goal']
+features = ['Height', 'Weight', 'Fitness Goal', 'Hypertension']
+features_to_encode = ['Fitness Goal', 'Hypertension']
 target = 'Vegetables'
 vegetableModel = RandomForestModel(df, features, target, multi_label=True)
-features_to_encode = ['Fitness Goal']
 print(vegetableModel.run_pipeline(features_to_encode))
 
 
@@ -92,7 +92,7 @@ print(vegetableModel.predict_single(person))
 
 
 
-df = pd.read_csv("../../exercise_data_updated_2.csv")
+df = pd.read_csv("exercise_data_adj.csv")
 df = df.dropna(subset=['Protein Intake'])
 df['Protein Intake'] = df['Protein Intake'].apply(lambda x: eval(x))
 
@@ -103,10 +103,9 @@ Y = mlb.fit_transform(df['Protein Intake'])
 print("Protein Intake classes:", mlb.classes_)
 all_protein = set(mlb.classes_)
 
-features = ['Height', 'Weight', 'Fitness Goal']
+
 target = 'Protein Intake'
 proteinModel = RandomForestModel(df, features, target, multi_label=True)
-features_to_encode = ['Fitness Goal']
 print(proteinModel.run_pipeline(features_to_encode))
 
 
@@ -124,6 +123,18 @@ def submit():
     data['Fitness Goal'] = data['goal']
     data['Height'] = data['height']
     data['Weight'] = data['weight']
+    data['Target Area'] = data['Focus_Area']
+
+    if data['Preference'] == 'Freeweight':
+        data['Preference'] = 'Dumbbell'
+
+    if data['Sex'] == 'Other':
+        x = random.random()
+        if x > .5:
+            data['Sex'] = 'Female'
+        else:
+            data['Sex'] = 'Male'
+
     print("Received data:", data)
     
 

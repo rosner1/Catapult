@@ -1,8 +1,8 @@
 'use client';
 
+import { Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import React from 'react';
-//import {Button} from "@/app/ui/button";
 
 const linksDictionary: { [key: string]: string } = {
     "Barbell Squat": "https://www.youtube.com/watch?v=-bJIpOq-LWk",
@@ -61,8 +61,7 @@ const imageFileName = (name: string) =>
 const formatWords = (str: string) =>
     str.replace(/^["']|["']$/g, '');
 
-const DetailPage = () => {
-
+const DetailPageContent = () => {
     const searchParams = useSearchParams();
     const name = searchParams.get('name') || "Unknown";
 
@@ -98,6 +97,14 @@ const DetailPage = () => {
                 <strong>{formatWords(name) + " Tutorial"}</strong>
             </button>
         </div>
+    );
+};
+
+const DetailPage = () => {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <DetailPageContent />
+        </Suspense>
     );
 };
 
